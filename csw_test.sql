@@ -17,85 +17,85 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `csw_test`
+-- Database: csw_test
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admins`
+-- Table structure for table ADMINS
 --
 
-CREATE TABLE `admins` (
-  `idAdmin` int(5) NOT NULL,
-  `emailAdmin` varchar(50) NOT NULL,
-  `adminname` varchar(50) NOT NULL,
-  `adminPassword` varchar(20) NOT NULL,
-  `nom_admin` varchar(50) NOT NULL,
-  `prenom_admin` varchar(50) NOT NULL,
-  `membre` tinyint(1) NOT NULL
+CREATE TABLE ADMINS (
+  idAdmin int(5) NOT NULL,
+  emailAdmin varchar(50) NOT NULL,
+  adminname varchar(50) NOT NULL,
+  adminPassword varchar(20) NOT NULL,
+  nom_admin varchar(50) NOT NULL,
+  prenom_admin varchar(50) NOT NULL,
+  membre tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `entrainements`
+-- Table structure for table ENTRAINEMENTS
 --
 
-CREATE TABLE `entrainements` (
-  `idEntrainment` int(5) NOT NULL,
-  `titre` varchar(50) NOT NULL,
-  `description` text NOT NULL,
-  `categorie` varchar(20) NOT NULL,
-  `date` date NOT NULL,
-  `heure_debut` time NOT NULL,
-  `lieu` varchar(50) NOT NULL,
-  `nombre_participants_actuel` int(11) NOT NULL,
-  `nombre_max_participants` int(11) NOT NULL,
-  `idAdmin` int(11) NOT NULL,
-  `heure_fin` time NOT NULL,
-  `id_photo` int(11) NOT NULL
+CREATE TABLE ENTRAINEMENTS (
+  idEntrainment int(5) NOT NULL,
+  titre varchar(50) NOT NULL,
+  description text NOT NULL,
+  categorie varchar(20) NOT NULL,
+  date date NOT NULL,
+  heure_debut time NOT NULL,
+  lieu varchar(50) NOT NULL,
+  nombre_participants_actuel int(11) NOT NULL,
+  nombre_max_participants int(11) NOT NULL,
+  idAdmin int(11) NOT NULL,
+  heure_fin time NOT NULL,
+  id_photo int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inscriptions`
+-- Table structure for table INSCRIPTIONS
 --
 
-CREATE TABLE `inscriptions` (
-  `id_inscription` int(5) NOT NULL,
-  `idUser` int(5) NOT NULL,
-  `idEntrainement` int(5) NOT NULL
+CREATE TABLE INSCRIPTIONS (
+  id_inscription int(5) NOT NULL,
+  idUser int(5) NOT NULL,
+  idEntrainement int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `photos`
+-- Table structure for table PHOTOS
 --
 
-CREATE TABLE `photos` (
-  `id_photo` int(5) NOT NULL,
-  `url_image` varchar(500) NOT NULL,
-  `uploaded_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `id_entrainement` int(5) NOT NULL
+CREATE TABLE PHOTOS (
+  id_photo int(5) NOT NULL,
+  url_image varchar(500) NOT NULL,
+  uploaded_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  id_entrainement int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `utilisateurs`
+-- Table structure for table UTILISATEURS
 --
 
-CREATE TABLE `utilisateurs` (
-  `idUser` int(5) NOT NULL,
-  `emailUser` varchar(50) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `userPassword` varchar(20) NOT NULL,
-  `nom_user` varchar(50) NOT NULL,
-  `prenom_user` varchar(50) NOT NULL,
-  `membre` tinyint(1) NOT NULL
+CREATE TABLE UTILISATEURS (
+  idUser int(5) NOT NULL,
+  emailUser varchar(50) NOT NULL,
+  username varchar(50) NOT NULL,
+  userPassword varchar(20) NOT NULL,
+  nom_user varchar(50) NOT NULL,
+  prenom_user varchar(50) NOT NULL,
+  membre tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -103,86 +103,86 @@ CREATE TABLE `utilisateurs` (
 --
 
 --
--- Indexes for table `admins`
+-- Indexes for table ADMINS
 --
-ALTER TABLE `admins`
-  ADD PRIMARY KEY (`idAdmin`);
+ALTER TABLE ADMINS
+  ADD PRIMARY KEY (idAdmin);
 
 --
--- Indexes for table `entrainements`
+-- Indexes for table ENTRAINEMENTS
 --
-ALTER TABLE `entrainements`
-  ADD PRIMARY KEY (`idEntrainment`),
-  ADD KEY `idAdmin` (`idAdmin`),
-  ADD KEY `id_photo` (`id_photo`);
+ALTER TABLE ENTRAINEMENTS
+  ADD PRIMARY KEY (idEntrainment),
+  ADD KEY idAdmin (idAdmin),
+  ADD KEY id_photo (id_photo);
 
 --
--- Indexes for table `inscriptions`
+-- Indexes for table INSCRIPTIONS
 --
-ALTER TABLE `inscriptions`
-  ADD PRIMARY KEY (`id_inscription`),
-  ADD KEY `idUser` (`idUser`),
-  ADD KEY `idEntrainement` (`idEntrainement`);
+ALTER TABLE INSCRIPTIONS
+  ADD PRIMARY KEY (id_inscription),
+  ADD KEY idUser (idUser),
+  ADD KEY idEntrainement (idEntrainement);
 
 --
--- Indexes for table `photos`
+-- Indexes for table PHOTOS
 --
-ALTER TABLE `photos`
-  ADD PRIMARY KEY (`id_photo`),
-  ADD KEY `id_entrainement` (`id_entrainement`);
+ALTER TABLE PHOTOS
+  ADD PRIMARY KEY (id_photo),
+  ADD KEY id_entrainement (id_entrainement);
 
 --
--- Indexes for table `utilisateurs`
+-- Indexes for table UTILISATEURS
 --
-ALTER TABLE `utilisateurs`
-  ADD PRIMARY KEY (`idUser`);
+ALTER TABLE UTILISATEURS
+  ADD PRIMARY KEY (idUser);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `admins`
+-- AUTO_INCREMENT for table ADMINS
 --
-ALTER TABLE `admins`
-  MODIFY `idAdmin` int(5) NOT NULL AUTO_INCREMENT;
+ALTER TABLE ADMINS
+  MODIFY idAdmin int(5) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `entrainements`
+-- AUTO_INCREMENT for table ENTRAINEMENTS
 --
-ALTER TABLE `entrainements`
-  MODIFY `idEntrainment` int(5) NOT NULL AUTO_INCREMENT;
+ALTER TABLE ENTRAINEMENTS
+  MODIFY idEntrainment int(5) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `inscriptions`
+-- AUTO_INCREMENT for table INSCRIPTIONS
 --
-ALTER TABLE `inscriptions`
-  MODIFY `id_inscription` int(5) NOT NULL AUTO_INCREMENT;
+ALTER TABLE INSCRIPTIONS
+  MODIFY id_inscription int(5) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `photos`
+-- AUTO_INCREMENT for table PHOTOS
 --
-ALTER TABLE `photos`
-  MODIFY `id_photo` int(5) NOT NULL AUTO_INCREMENT;
+ALTER TABLE PHOTOS
+  MODIFY id_photo int(5) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `utilisateurs`
+-- AUTO_INCREMENT for table UTILISATEURS
 --
-ALTER TABLE `utilisateurs`
-  MODIFY `idUser` int(5) NOT NULL AUTO_INCREMENT;
+ALTER TABLE UTILISATEURS
+  MODIFY idUser int(5) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `entrainements`
+-- Constraints for table ENTRAINEMENTS
 --
-ALTER TABLE `entrainements`
-  ADD CONSTRAINT `entrainements_ibfk_1` FOREIGN KEY (`idAdmin`) REFERENCES `admins` (`idAdmin`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `entrainements_ibfk_2` FOREIGN KEY (`id_photo`) REFERENCES `photos` (`id_photo`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE ENTRAINEMENTS
+  ADD CONSTRAINT entrainements_ibfk_1 FOREIGN KEY (idAdmin) REFERENCES ADMINS (idAdmin) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT entrainements_ibfk_2 FOREIGN KEY (id_photo) REFERENCES PHOTOS (id_photo) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `inscriptions`
+-- Constraints for table INSCRIPTIONS
 --
-ALTER TABLE `inscriptions`
-  ADD CONSTRAINT `inscriptions_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `utilisateurs` (`idUser`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `inscriptions_ibfk_2` FOREIGN KEY (`idEntrainement`) REFERENCES `entrainements` (`idEntrainment`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE INSCRIPTIONS
+  ADD CONSTRAINT INSCRIPTIONS_ibfk_1 FOREIGN KEY (idUser) REFERENCES UTILISATEURS (idUser) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT INSCRIPTIONS_ibfk_2 FOREIGN KEY (idEntrainement) REFERENCES ENTRAINEMENTS (idEntrainment) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
