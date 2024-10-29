@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 27, 2024 at 10:01 PM
+-- Generation Time: Oct 29, 2024 at 12:56 AM
 -- Server version: 5.7.11
 -- PHP Version: 5.6.18
 
@@ -91,7 +91,6 @@ CREATE TABLE `photos` (
 CREATE TABLE `utilisateurs` (
   `idUser` int(5) NOT NULL,
   `emailUser` varchar(50) NOT NULL,
-  `username` varchar(50) NOT NULL,
   `userPassword` varchar(20) NOT NULL,
   `nom_user` varchar(50) NOT NULL,
   `prenom_user` varchar(50) NOT NULL,
