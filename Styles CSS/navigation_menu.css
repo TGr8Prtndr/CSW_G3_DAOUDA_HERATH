@@ -1,0 +1,10 @@
+.navbar-brand {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: italic;
+    font-weight: 600; 
+    font-size: 20px; 
+    color: #ffffff;
+
+    justify-content: center;
+}
