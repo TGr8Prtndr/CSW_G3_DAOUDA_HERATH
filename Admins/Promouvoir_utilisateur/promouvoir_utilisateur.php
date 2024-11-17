@@ -1,5 +1,19 @@
 <?php
+/**
+ * Page Promouvoir un utilisateur
+ * @author : Ilyas DAOUDA
+ */
+?>
+
+<?php
   $titre = "Promouvoir un utilisateur";
+  session_start();
+
+  // Redirect to login if the user is not logged in
+  if (!isset($_SESSION['admin_id'])) {
+     header("Location: ../../Visiteurs/connexion.php");
+     exit;
+  }
 
   include('../header_admins_2.php');
   include('../admins.navigation_menu_4.php');
@@ -7,8 +21,6 @@
 
   <form  method="POST" action="tt_promouvoir_utilisateur.php">
     <div class="container">
-
-    <!-- Ici on utilise le breakpoint medium -->
     
     <!-- Section Promouvoir un utilisateur -->
     <div class="row mt-5 bg-light" id="Section3">

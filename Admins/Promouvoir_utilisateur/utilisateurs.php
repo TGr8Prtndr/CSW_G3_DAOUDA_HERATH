@@ -1,4 +1,11 @@
 <?php
+/**
+ * Code d'affichage du tableau des utilisateurs
+ * @author : Ilyas DAOUDA
+ */
+?>
+
+<?php
 
 // Pour récupérer la tableau
 require_once('tt_utilisateurs.php');
@@ -10,9 +17,10 @@ require_once('tt_utilisateurs.php');
                 <tr>
                     <th class="col-1">Sélectionner</th>
                     <th class="col-1">ID</th>
-                    <th class="col-3">Nom</th>
-                    <th class="col-3">Prénom</th>
-                    <th class="col-4">Adresse mail</th>
+                    <th class="col-2">Nom</th>
+                    <th class="col-2">Prénom</th>
+                    <th class="col-3">Adresse mail</th>
+                    <th class="col-3">Veut devenir membre</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,6 +31,7 @@ require_once('tt_utilisateurs.php');
                         <td><?php echo htmlspecialchars($row['nom_user']); ?></td>
                         <td><?php echo htmlspecialchars($row['prenom_user']); ?></td>
                         <td><?php echo htmlspecialchars($row['emailUser']); ?></td>
+                        <td><?php echo htmlspecialchars($row['veut_devenir_membre']); ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

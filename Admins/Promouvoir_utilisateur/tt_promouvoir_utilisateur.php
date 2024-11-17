@@ -1,7 +1,14 @@
 <?php
-  session_start(); // Pour les messages
+/**
+ * Code de traitement pour le fichier promouvoir_utilisateur.php
+ * @author : Ilyas DAOUDA
+ */
+?>
+
+<?php
+  session_start();
   
-  // Connexion :
+  // Connexion à la BDD
   require_once("../../param.inc.php");
   $mysqli = new mysqli($host, $login, $passwd, $dbname);
   $mysqli->set_charset("utf8");
@@ -19,8 +26,8 @@
         foreach ($ids as $id) {
 
             // On insère les données de l'utilisateur dans la table `admins`
-            $insertQuery = "INSERT INTO admins (nom_admin, prenom_admin, emailAdmin)
-                            SELECT nom_user, prenom_user, emailUser 
+            $insertQuery = "INSERT INTO admins (nom_admin, prenom_admin, emailAdmin, adminPassword)
+                            SELECT nom_user, prenom_user, emailUser, userPassword
                             FROM utilisateurs 
                             WHERE idUser = ?";
             
