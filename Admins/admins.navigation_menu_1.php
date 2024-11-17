@@ -1,4 +1,10 @@
-<!-- Barre de navigation de la page d'accueil pour les visiteurs -->
+<?php
+/**
+ * Barre de navigation pour la page d'accueil admin
+ * @author : Ilyas DAOUDA
+ */
+?>
+
 <nav class="navbar navbar-expand-md bg-dark border-bottom border-body sticky-top" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="index_admins.php">Running</a>

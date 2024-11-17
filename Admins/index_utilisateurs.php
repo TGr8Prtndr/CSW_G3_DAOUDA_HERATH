@@ -1,4 +1,11 @@
 <?php
+/**
+ * Code d'affichage d'un tableau réduit des utilisateurs sur la page d'accueil admin
+ * @author : Ilyas DAOUDA
+ */
+?>
+
+<?php
 
 // Pour récupérer la tableau
 require_once('tt_index_utilisateurs.php');

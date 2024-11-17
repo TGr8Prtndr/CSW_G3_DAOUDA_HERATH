@@ -1,7 +1,20 @@
 <?php
+/**
+ * PAge d'accueil admin
+ * @author : Ilyas DAOUDA
+ */
+?>
+
+<?php
   session_start();
-  $titre = "Accueil";
+  $titre = "Running";
   header('Content-Type: text/html; charset=utf-8');
+
+  // Redirect to login if the user is not logged in
+  if (!isset($_SESSION['admin_id'])) {
+     header("Location: ../../Visiteurs/connexion.php");
+     exit;
+  }
 
   // On met à jour la table entrainements pour "annuler les entrainements passés".
   include '../update_entrainements.php';
@@ -35,6 +48,19 @@
 
     <div class="col-md-12 text-center mb-2">
           <button onclick="window.location.href='Ajout_entrainement/ajout_entrainement.php'" type="button" class="btn btn-secondary">Ajouter un entrainement</button>
+    </div>
+  </div>
+
+  <!-- Section Voir les inscrits à un entrainement -->
+  <div class="row mt-5 bg-light" >
+    <div class="col-md-12 text-center">
+      <h1 class="montserrat" id="Section2">Voir les inscrits à un entrainement</h1>
+    </div>
+
+    <?php include('index_inscrits.php');?>
+
+    <div class="col-md-12 text-center mb-2">
+          <button onclick="window.location.href='Voir_inscrit/voir_inscrits.php'" type="button" class="btn btn-secondary">Voir les inscrits à un entrainement</button>
     </div>
   </div>
 

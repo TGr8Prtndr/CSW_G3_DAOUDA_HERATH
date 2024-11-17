@@ -1,4 +1,11 @@
 <?php
+/**
+ * Code d'affichage d'un tableau réduit des entrainements sur la page d'accueil admin
+ * @author : Ilyas DAOUDA
+ */
+?>
+
+<?php
 
 // Pour récupérer la tableau
 include('tt_index_entrainement.php');

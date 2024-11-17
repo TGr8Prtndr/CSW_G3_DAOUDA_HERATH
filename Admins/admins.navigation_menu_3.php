@@ -1,6 +1,6 @@
 <?php
 /**
- * Barre de navigation pour la page Promouvoir un utilisateur
+ * Barre de navigation pour la page Voir les inscrits aux entrainements
  * @author : Ilyas DAOUDA
  */
 ?>
@@ -17,10 +17,10 @@
           <a class="nav-link" href="../Ajout_entrainement/ajout_entrainement.php">Ajouter un entrainement</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../Voir_inscrit/voir_inscrits.php">Voir les inscrits aux entrainements</a> 
+          <a class="nav-link" href="voir_inscrits.php">Voir les inscrits aux entrainements</a> 
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="promouvoir_utilisateur.php">Promouvoir un utilisateur</a> 
+          <a class="nav-link" href="../Promouvoir_utilisateur/promouvoir_utilisateur.php">Promouvoir un utilisateur</a> 
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../Annuler_entrainement/annuler_entrainement.php">Annuler un entrainement</a> 

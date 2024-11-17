@@ -1,4 +1,11 @@
 <?php
+/**
+ * Code de traitement pour le fichier index_utilisateurs.php
+ * @author : Ilyas DAOUDA
+ */
+?>
+
+<?php
 
   // Connexion :
   require_once("../param.inc.php");
@@ -29,7 +36,7 @@
   }
 
   else {
-    $_SESSION['message'] = "Connexion impossible à la base de données pour l'affichage des entraînements.";
+    $_SESSION['message'] = "Connexion impossible à la base de données pour l'affichage des utilisateurs.";
     header('Location: index_admins.php');
   }
 

@@ -1,3 +1,10 @@
+<?php
+/**
+ * Header pour la page d'accueil admin
+ * @author : Ilyas DAOUDA
+ */
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 

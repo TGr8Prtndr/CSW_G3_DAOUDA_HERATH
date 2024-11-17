@@ -1,3 +1,10 @@
+<?php
+/**
+ * Header pour les pages admin secondaires (Ajouter un entrainement, Voir les inscrits aux entrainements, etc.)
+ * @author : Ilyas DAOUDA
+ */
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 

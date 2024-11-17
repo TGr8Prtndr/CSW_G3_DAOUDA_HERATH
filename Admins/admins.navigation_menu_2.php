@@ -1,4 +1,10 @@
-<!-- Barre de navigation de la page d'accueil pour les visiteurs -->
+<?php
+/**
+ * Barre de navigation pour la page Ajouter un entrainement
+ * @author : Ilyas DAOUDA
+ */
+?>
+
 <nav class="navbar navbar-expand-md bg-dark border-bottom border-body sticky-top" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="../index_admins.php">Running</a>
@@ -11,7 +17,7 @@
           <a class="nav-link" href="ajout_entrainement.php">Ajouter un entrainement</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Voir les inscrits aux entrainements</a> 
+          <a class="nav-link" href="../Voir_inscrit/voir_inscrits.php">Voir les inscrits aux entrainements</a> 
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../Promouvoir_utilisateur/promouvoir_utilisateur.php">Promouvoir un utilisateur</a> 
