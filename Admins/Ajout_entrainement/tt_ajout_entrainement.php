@@ -1,7 +1,16 @@
 <?php
-  session_start(); // Pour les messages
+/**
+ * Code de traitement pour le fichier ajout_entrainement.php
+ * @author : Ilyas DAOUDA
+ */
+?>
+
+<?php
+  session_start();
+
+  header('Content-Type: text/html; charset=utf-8');
   
-  // Contenu du formulaire :
+  // Contenu du formulaire
   $titre =  htmlentities($_POST['titre']);
   $categorie = htmlentities($_POST['categorie']);
   $date_entrainement = $_POST['date_entrainement'];
@@ -11,10 +20,10 @@
   $description_entrainement =  htmlentities($_POST['description_entrainement']);
   $heure_fin = $_POST['heure_fin'];
   
-  // Connexion :
+  // Connexion à la BDD
   require_once("../../param.inc.php");
   $mysqli = new mysqli($host, $login, $passwd, $dbname);
-  $mysqli->set_charset("utf8");
+  $mysqli->set_charset("utf8mb4");
   if ($mysqli->connect_error) {
       die('Erreur de connexion (' . $mysqli->connect_errno . ') '
               . $mysqli->connect_error);

@@ -1,5 +1,19 @@
 <?php
+/**
+ * Page Ajouter un entrainement
+ * @author : Ilyas DAOUDA
+ */
+?>
+
+<?php
   $titre = "Ajouter un entrainement";
+  session_start();
+
+  // Redirect to login if the user is not logged in
+  if (!isset($_SESSION['admin_id'])) {
+     header("Location: ../../Visiteurs/connexion.php");
+     exit;
+  }
 
   include('../header_admins_2.php');
   include('../admins.navigation_menu_2.php');
