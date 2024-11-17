@@ -1,4 +1,10 @@
-  
+<?php
+/**
+ * Code pour l'affichage des messages sur le site web
+ * @author : Ilyas DAOUDA
+ */
+?>
+
   <?php
   if(isset($_SESSION['message'])) {
 

@@ -1,8 +1,15 @@
 <?php
-  session_start();
-  $titre = "Accueil";
+/**
+ * Page d'accueil visiteur
+ * @author : Ilyas DAOUDA
+ */
+?>
 
-  // On met à jour la table entrainements pour "annuler les entrainements passés".
+<?php
+  session_start();
+  $titre = "Running";
+
+  // On met à jour la table entrainements pour "annuler" les entrainements passés.
   include 'update_entrainements.php';
 
   // On vérifie si l'utilisateur est connecté et on le redirige le cas échéant selon son type de compte

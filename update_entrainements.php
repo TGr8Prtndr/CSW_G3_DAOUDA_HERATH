@@ -1,6 +1,14 @@
 <?php
+/**
+ * Code pour vérifier à chaque fois si un entrainement de la BDD est déjà passé
+ * Si oui, on met la colonne estAnnulé à 0
+ * @author : Ilyas DAOUDA
+ */
+?>
 
-  // Connexion :
+<?php
+
+  // Connexion à la BDD
   require_once("param.inc.php");
   $mysqli = new mysqli($host, $login, $passwd, $dbname);
   $mysqli->set_charset("utf8");

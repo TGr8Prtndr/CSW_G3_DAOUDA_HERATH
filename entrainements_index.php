@@ -1,4 +1,11 @@
 <?php
+/**
+ * Code pour afficher les entrainements sur la page d'accueil visiteur
+ * @author : Ilyas DAOUDA
+ */
+?>
+
+<?php
 header('Content-Type: text/html; charset=utf-8');
 
 // Pour récupérer la tableau

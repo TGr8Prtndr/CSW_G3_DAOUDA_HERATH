@@ -1,6 +1,13 @@
 <?php
+/**
+ * Code de traitement pour le fichier entrainements_index.php
+ * @author : Ilyas DAOUDA
+ */
+?>
 
-  // Connexion :
+<?php
+
+  // Connexion à la BDD
   require_once("param.inc.php");
   $mysqli = new mysqli($host, $login, $passwd, $dbname);
   $mysqli->set_charset("utf8");

@@ -1,7 +1,13 @@
 <?php
-  // Paramètre de connexion à la BDD (à créer)
+/**
+ * Paramètres de connexion à la BDD
+ * @author : Ilyas DAOUDA
+ */
+?>
+
+<?php
   $host="localhost";
-  $login="root";
-  $passwd="root";
-  $dbname="csw-g3";
+  $login="root";       // 'grp_3_3' sur ordinateur personnel 
+  $passwd="root";      // 'pJcf0LWtTV09g' sur ordinateur personnel
+  $dbname="csw-g3";   // 'bdd_3_3' sur ordinateur personnel
 ?>
