@@ -1,8 +1,17 @@
 <?php
+/**
+ * Page d'inscription (création d'un compte UTILISATEUR)
+ * @author : Ilyas DAOUDA
+ */
+?>
+
+<?php
   $titre = "Inscription";
+  session_start();
 
   include('header_visitor.php');
   include('lite.navigation_menu.php');
+  include('../message.inc.php');
 ?>
 
   <h1 class="mb-4 montserrat">Inscription</h1>

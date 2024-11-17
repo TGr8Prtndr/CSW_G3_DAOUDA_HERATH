@@ -1,5 +1,12 @@
 <?php
-  session_start(); // Pour les messages
+/**
+ * Code de traitement pour le fichier connexion.php
+ * @author : Ilyas DAOUDA
+ */
+?>
+
+<?php
+  session_start();
 
   // Contenu du formulaire :
   $email =  htmlentities($_POST['email']);
@@ -9,10 +16,11 @@
   $options = [
         'cost' => 10,
   ];
+
   // On crypte le mot de passe
   $password_crypt = password_hash($password, PASSWORD_BCRYPT, $options);
 
-  // Connexion :
+  // Connexion à la BDD
   require_once("../param.inc.php");
   $mysqli = new mysqli($host, $login, $passwd, $dbname);
   if ($mysqli->connect_error) {
@@ -21,7 +29,7 @@
   }
 
   
-  if ($stmt_user = $mysqli->prepare("SELECT userPassword FROM utilisateurs WHERE emailUser = ?")) {
+  if ($stmt_user = $mysqli->prepare("SELECT idUser, userPassword FROM utilisateurs WHERE emailUser = ?")) {
 
     $stmt_user->bind_param("s", $email);
     $stmt_user->execute();
@@ -29,7 +37,7 @@
 
     // On vérifie si l'email existe dans la base de données (il devrait y avoir une ligne).
     if ($stmt_user->num_rows == 1) {
-        $stmt_user->bind_result($hash_password); // On stocke la valeur de la colonne userPassword
+        $stmt_user->bind_result($idUser, $hash_password); // On stocke la valeur de la colonne userPassword
         $stmt_user->fetch(); // On stocke cette valeur dans la variable correspondante ici.
 
         // Vérification de la conformité du mot de passe
@@ -38,6 +46,7 @@
             $_SESSION['message'] = "Connexion réussie !";
             // Stockage du type de compte
             $_SESSION['account_type'] = "user";
+            $_SESSION['user_id'] = $idUser;
             // Redirection vers la page d'accueil ou tableau de bord
             header('Location: ../Utilisateurs/index_users.php');
         }
@@ -48,7 +57,7 @@
     }
 
     else {
-      if ($stmt_admin = $mysqli->prepare("SELECT adminPassword FROM admins WHERE emailAdmin = ?"))
+      if ($stmt_admin = $mysqli->prepare("SELECT idAdmin, adminPassword FROM admins WHERE emailAdmin = ?"))
       {
         $stmt_admin->bind_param("s", $email);
         $stmt_admin->execute();
@@ -56,7 +65,7 @@
 
         // On vérifie si l'email existe dans la base de données (il devrait y avoir une ligne).
         if ($stmt_admin->num_rows == 1) {
-          $stmt_admin->bind_result($hash_password); // On stocke la valeur de la colonne userPassword
+          $stmt_admin->bind_result($idAdmin, $hash_password); // On stocke la valeur de la colonne userPassword
           $stmt_admin->fetch(); // On stocke cette valeur dans la variable correspondante ici.
 
           // Vérification de la conformité du mot de passe
@@ -65,6 +74,7 @@
               $_SESSION['message'] = "Connexion réussie !";
               // Stockage du type de compte
               $_SESSION['account_type'] = "admin";
+              $_SESSION['admin_id'] = $idAdmin;
               // Redirection vers la page d'accueil ou tableau de bord
               header('Location: ../Admins/index_admins.php');
           }

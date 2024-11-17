@@ -1,3 +1,10 @@
+<?php
+/**
+ * Header pour les pages d'inscription et de connexions
+ * @author : Ilyas DAOUDA
+ */
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 

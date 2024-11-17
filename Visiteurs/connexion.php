@@ -1,4 +1,11 @@
 <?php
+/**
+ * Page de connexion à un compte utilisateur/admin
+ * @author : Ilyas DAOUDA
+ */
+?>
+
+<?php
   $titre = "Connexion";
   session_start();
   
@@ -6,7 +13,7 @@
   include('lite.navigation_menu.php');
   include('../message.inc.php');
 ?>
-  <?phpinclude('../message.inc.php');?>
+  
   <h1 class="mb-4 montserrat">Connexion à votre compte</h1>
   <form  method="POST" action="tt_connexion.php">
     <div class="container">

@@ -1,3 +1,10 @@
+<?php
+/**
+ * Barre de navigation "incomplète" (celle des pages de connexion et d'inscription)
+ * @author : Ilyas DAOUDA
+ */
+?>
+
 <!-- Barre de navigation de la page d'accueil pour les visiteurs -->
 <nav class="navbar navbar-expand-md bg-dark border-bottom border-body" data-bs-theme="dark">
   <div class="container-fluid">
