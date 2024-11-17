@@ -1,0 +1,131 @@
+/**
+ * Style sheet for all the pages of user
+ * @author HERATH Sanduni
+ */
+
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensures the page takes up at least the full height of the viewport */
+    display: flex;
+    flex-direction: column; /* Arranges content vertically */
+    font-family: 'Arial', sans-serif; /* Default font for the website */
+}
+
+/* Navbar Styles */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff; /* White text for navbar links */
+    font-weight: 500;
+    padding: 10px 15px;
+    text-transform: capitalize; /* Ensures all links have a consistent style */
+}
+
+.navbar-nav .nav-link.active {
+    color: #ffd700; /* Highlight color for the active page */
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107; /* Hover color for links */
+    text-decoration: none; /* Removes underline on hover */
+}
+
+/* Main Content Styles */
+main {
+    flex: 1; /* Allows main content to expand and fill available space */
+    padding-top: 5rem; /* Adds space for fixed navbar */
+    padding-bottom: 2rem; /* Prevents content from overlapping with footer */
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #343a40; /* Dark grey for section titles */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures consistent table styling */
+}
+
+.table th, .table td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.table-dark th {
+    background-color: #343a40;
+    color: #ffffff; /* White text on dark background */
+}
+
+.table-bordered {
+    border: 1px solid #dee2e6;
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    position: relative; /* Allows flexibility for footer positioning */
+}
+
+.footer p {
+    margin: 0.2rem 0; /* Ensures consistent spacing between lines */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem; /* Scales down brand text size for smaller screens */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Adjusts heading size for smaller devices */
+    }
+
+    .table {
+        font-size: 0.9rem; /* Reduces table text size for readability */
+    }
+
+    .footer {
+        font-size: 0.8rem; /* Adjusts footer text size for smaller devices */
+    }
+}
+
+
+/* Specific style for footer-secondary */
+.footer-secondary {
+    background-color: #343a40; /* Slightly darker than the primary footer */
+    color: #f8f9fa; /* Lighter text color */
+    border-top: 2px solid #ffd700; /* Gold border for differentiation */
+    font-size: 0.9rem; /* Slightly smaller font size */
+}
+
+/* Style for the secondary header */
+.navbar-secondary {
+    background-color: #212529; /* Slightly darker than the standard Bootstrap bg-dark */
+    border-bottom: 2px solid #ffd700; /* Gold border for differentiation */
+    padding: 1rem; /* Adjust padding if necessary */
+}
+
+.navbar-secondary .navbar-brand {
+    font-size: 2rem; /* Larger font size for "Running" */
+    font-weight: bold; /* Make the text bold */
+    color: #ffffff; /* Ensure the text is visible */
+}
+
+
+
